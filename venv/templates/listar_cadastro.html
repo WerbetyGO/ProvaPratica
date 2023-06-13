@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pets Cadastrados</title>
+</head>
+<body>
+    <h1>Pets Cadastrados</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pet in pets %}
+            <tr>
+                <td>{{ pet['nome'] }}</td>
+                <td>{{ pet['idade'] }}</td>
+                <td>
+                    <a href="/ver-cadastro/{{ loop.index0 }}">Ver Cadastro</a>
+                    <a href="/excluir-pet/{{ loop.index0 }}">Excluir Cadastro</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a
